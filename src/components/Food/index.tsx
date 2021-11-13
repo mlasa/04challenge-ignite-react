@@ -5,19 +5,21 @@ import { Container } from './styles';
 import api from '../../services/api';
 
 interface IFood {
-  food: {
-    id: string;
-    available: boolean;
-    image: string;
-    name: string;
-    description: string;
-    price: number;
-  };
+  id: string;
+  available: boolean;
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
+interface IFoodProps {
+  food: IFood;
   handleDelete: (id) => void;
   handleEditFood: (food) => void;
 }
 
-export function Food({ food, handleDelete, handleEditFood }: IFood) {
+export function Food({ food, handleDelete, handleEditFood }: IFoodProps) {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   const toggleAvailable = async () => {
