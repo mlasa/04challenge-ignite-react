@@ -8,8 +8,15 @@ import {
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
+import { IconType } from 'react-icons';
 
-const Input = ({ name, icon: Icon, ...rest }) => {
+interface IInputProps {
+  name: string;
+  icon?: IconType;
+  placeholder: string;
+}
+
+const Input = ({ name, icon: Icon, ...rest }: IInputProps) => {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
