@@ -13,11 +13,11 @@ import { IconType } from 'react-icons';
 interface IInputProps {
   name: string;
   icon?: IconType;
-  placeholder: string;
+  placeholder?: string;
 }
 
 const Input = ({ name, icon: Icon, ...rest }: IInputProps) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);

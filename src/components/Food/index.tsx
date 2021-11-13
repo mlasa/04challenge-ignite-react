@@ -15,11 +15,11 @@ interface IFood {
 
 interface IFoodProps {
   food: IFood;
-  handleDelete: (id) => void;
-  handleEditFood: (food) => void;
+  handleDelete: (id: string) => void;
+  handleEditFood: (food: IFood) => void;
 }
 
-export function Food({ food, handleDelete, handleEditFood }: IFoodProps) {
+export default function Food({ food, handleDelete, handleEditFood }: IFoodProps) {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   const toggleAvailable = async () => {
