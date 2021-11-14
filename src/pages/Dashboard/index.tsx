@@ -70,11 +70,11 @@ function Dashboard() {
     }
   }
 
-  const handleDeleteFood = async (id: number) => {
+  const handleDeleteFood = async (id: string) => {
 
     await api.delete(`/foods/${id}`);
 
-    const foodsFiltered = foods.filter(food => id !== food.id);
+    const foodsFiltered = foods.filter((food => id !== food.id));
 
     setFoods(foodsFiltered);
   }
@@ -88,8 +88,8 @@ function Dashboard() {
   }
 
   const handleEditFood = (food: IFood) => {
-    setEditingFood(food);
     setEditModalOpen(true);
+    setEditingFood(food);
   }
 
 

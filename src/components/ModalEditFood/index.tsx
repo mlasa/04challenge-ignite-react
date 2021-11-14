@@ -14,7 +14,7 @@ interface AddFood {
 }
 
 interface IFood {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: string;

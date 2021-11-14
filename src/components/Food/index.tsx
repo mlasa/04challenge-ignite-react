@@ -10,7 +10,7 @@ interface IFood {
   image: string;
   name: string;
   description: string;
-  price: number;
+  price: string;
 }
 
 interface IFoodProps {
